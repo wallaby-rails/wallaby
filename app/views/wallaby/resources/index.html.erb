@@ -4,10 +4,10 @@ decorated_collection = decorate collection
 %>
 <article class="resources">
   <div class="resources__header">
-    <h1><%= to_model_label(current_model_class) %></h1>
-    <%= render 'index_query' %>
+    <h1 class="resources__title"><%= to_model_label(current_model_class) %></h1>
     <%= render 'index_filters' %>
     <%= render 'index_pagination' %>
+    <%= render 'index_query' %>
   </div>
   <%= render 'flash_messages' %>
 
@@ -50,7 +50,7 @@ decorated_collection = decorate collection
       </div>
     <% else %>
       <div class="resources__not-found">
-        <%= image_tag 'wallaby/not_found.png' %>
+        <%= image_tag 'wallaby/not_found.png', class: 'resources__not-found-image' %>
         <%= wt 'errors.not_found.collection' %>
       </div>
     <% end %>

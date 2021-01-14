@@ -1,18 +1,96 @@
-.minicolors-theme-bootstrap {
-  .minicolors-swatch {
-    width: 25px;
-    height: 25px;
-  }
-
-  .minicolors-input {
-    padding-left: 36px;
-  }
+// Minicolors
+.minicolors-theme-bootstrap .minicolors-swatch
+{
+  width: 25px;
+  height: 25px;
 }
 
-.bootstrap-datetimepicker-widget {
-  table {
-    td.day, th {
-      border: none;
-    }
-  }
+.minicolors-theme-bootstrap .minicolors-input
+{
+  padding-left: 36px;
+}
+
+// Bootstrap datetimepicker
+.bootstrap-datetimepicker-widget th,
+.bootstrap-datetimepicker-widget td
+{
+  border: none;
+}
+
+// Bootstrap datetimepicker
+.note-editor.note-frame
+{
+  border-color: #ced4da;
+  border-radius: 0;
+}
+
+// Bootstrap navbar
+.navbar
+{
+  background-color: white;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.175);
+  position: relative;
+}
+
+.navbar .navbar-nav .dropdown-toggle
+{
+  padding-right: 13px;
+}
+
+.navbar .navbar-brand
+{
+  color: $light-red-color;
+}
+
+.navbar .navbar-brand:hover
+{
+  color: $default-red-color;
+}
+
+// Bootstrap Dropdown
+.dropdown-toggle
+{
+  display: inline-block;
+  margin-right: 2px;
+  position: relative;
+  padding-right: 12px;
+}
+
+.dropdown-toggle:after
+{
+  display: none;
+}
+
+.dropdown-toggle:before
+{
+  @extend .fa;
+  @extend .fa-chevron-down;
+  border: none;
+  color: $light-red-color;
+  font-size: 9px;
+  margin-top: -4px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+
+.dropdown-toggle:hover:before
+{
+  color: $dark-red-color;
+}
+
+.show > .dropdown-toggle:before
+{
+  @extend .fa-chevron-up;
+}
+
+// Bootstrap others
+.btn-primary
+{
+  color: $white;
+}
+
+.alert
+{
+  margin-bottom: 10px;
 }

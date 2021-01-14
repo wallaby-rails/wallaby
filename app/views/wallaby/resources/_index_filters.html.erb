@@ -4,15 +4,16 @@ filter = filter_name_by params[:filter], filters
 %>
 <nav class="filters">
   <% if filters.present? %>
-    <a id="all_filters" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    <a id="all_filters" href="#dropdown" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
       <%= filter_label(filter, filters) || all_label %>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="all_filters">
-      <li><em><%= wt 'filters.title' %></em></li>
+    <div class="dropdown-menu" aria-labelledby="all_filters">
+      <h5 class="dropdown-header"><%= wt 'filters.title' %></h5>
       <% filters.keys.unshift(:all).each do |filter_name| %>
-        <%= content_tag :li, filter_link(current_model_class, filter_name, filters: filters), { class: filter.to_s == filter_name.to_s && 'filters--current' } %>
+        <% is_current = filter.to_s == filter_name.to_s %>
+        <%= filter_link current_model_class, filter_name, filters: filters, html_options: { class: ['dropdown-item', is_current && 'filters__link--current'] } %>
       <% end %>
-    </ul>
+    </div>
   <% else %>
     <%= all_label %>
   <% end %>
