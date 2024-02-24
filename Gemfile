@@ -63,6 +63,9 @@ end
 group :test do
   gem 'database_cleaner'
   gem 'deep-cover'
+  gem 'just-the-docs'
+  gem 'jekyll'
+  gem 'generator_spec'
   gem 'rails-controller-testing'
   gem 'simplecov', '~> 0.17.0'
   gem 'webmock'
